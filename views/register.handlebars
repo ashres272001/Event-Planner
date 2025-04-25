@@ -1,0 +1,19 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>Create Account</h2>
+
+    <a href="/" class="btn back-btn">← Back to Home</a>
+    <form action="/register" method="POST" class="form-box">
+      <input type="email" name="email" placeholder="Email (@example.com)" required>
+      <input type="password" name="password" placeholder="Password (min 8 characters)" required>
+
+      <select name="role" required>
+        <option value="">Select Role</option>
+        <option value="Organizer">Organizer</option>
+        <option value="Attendee">Attendee</option>
+      </select>
+
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</div>

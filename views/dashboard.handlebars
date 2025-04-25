@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+<div class="dashboard-header">
+  <p>👋 Welcome, Organizer #{{userId}}</p>
+  <a href="/logout" class="btn logout-btn">Logout</a>
+</div>
+
+<h2>My Events</h2>
+{{#if myEvents.length}}
+  {{#each myEvents}}
+    <div class="event-card">
+        <h3>{{this.title}}</h3>
+        <p>{{this.description}}</p>
+        <p><strong>Location:</strong> {{this.location}}</p>
+        <p><strong>Time:</strong> {{this.time}}</p>
+
+        <div class="event-actions">
+            <a href="/events/edit/{{this.id}}" class="btn edit-btn">Edit</a>
+            <form action="/events/delete/{{this.id}}" method="POST" style="display:inline;">
+                <button type="submit" class="btn delete-btn">Delete</button>
+            </form>
+            <a href="/events/rsvps/{{this.id}}" class="btn rsvp-details-btn">View RSVP Details</a>
+        </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>You haven't created any events yet.</p>
+{{/if}}
+
+<a href="/create-event" class="btn create-btn">+ Create New Event</a>
+
+<h2>All Events</h2>
+{{#each allEvents}}
+  <div class="event-card">
+    <h3>{{this.title}}</h3>
+    <p>{{this.description}}</p>
+    <p><strong>Location:</strong> {{this.location}}</p>
+    <p><strong>Time:</strong> {{this.time}}</p>
+    <p><strong>By Organizer ID:</strong> {{this.createdBy}}</p>
+  </div>
+{{/each}}

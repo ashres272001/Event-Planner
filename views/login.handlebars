@@ -1,0 +1,25 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>Login</h2>
+
+    <a href="/" class="btn back-btn">← Back to Home</a>
+    <form action="/login" method="POST" class="form-box">
+      <input type="email" name="email" placeholder="Email (@example.com)" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- SweetAlert2 script for popup -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{{#if error}}
+<script>
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: '{{error}}'
+  });
+</script>
+{{/if}}

@@ -1,0 +1,17 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <a href="/dashboard" class="btn back-btn">← Back to Dashboard</a>
+  </div>
+
+  <div class="create-header">
+    <h2>Create New Event</h2>
+  </div>
+
+  <form action="/events" method="POST" class="form-box">
+    <input type="text" name="title" placeholder="Event Title" required>
+    <textarea name="description" placeholder="Description" required></textarea>
+    <input type="text" name="location" placeholder="Location" required>
+    <input type="datetime-local" name="time" required>
+    <button type="submit">Save Event</button>
+  </form>
+</div>

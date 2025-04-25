@@ -1,0 +1,17 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <a href="/dashboard" class="btn back-btn">← Back to Dashboard</a>
+  </div>
+
+  <h2>RSVPs for: {{event.title}}</h2>
+
+  {{#if attendees.length}}
+    <ul>
+      {{#each attendees}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No one has RSVP’d yet.</p>
+  {{/if}}
+</div>

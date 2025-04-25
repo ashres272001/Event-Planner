@@ -1,0 +1,17 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <a href="/dashboard" class="btn back-btn">← Back to Dashboard</a>
+  </div>
+
+  <div class="create-header">
+    <h2>Edit Event</h2>
+  </div>
+
+  <form action="/events/edit/{{event.id}}" method="POST" class="form-box">
+    <input type="text" name="title" value="{{event.title}}" required>
+    <textarea name="description" required>{{event.description}}</textarea>
+    <input type="text" name="location" value="{{event.location}}" required>
+    <input type="datetime-local" name="time" value="{{event.time}}" required>
+    <button type="submit">Save Changes</button>
+  </form>
+</div>
