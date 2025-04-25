@@ -9,10 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(session({
-    secret: 'super-secret-key', // replace this in production
-    resave: false,
-    saveUninitialized: false
-  }));
+  secret: process.env.SESSION_SECRET, 
+  resave: false,
+  saveUninitialized: false
+}));
+
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
